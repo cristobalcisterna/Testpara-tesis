@@ -1,0 +1,34 @@
+<% content_for(:title) do %>
+  Internal Positions
+<% end %>
+<p id="notice"><%= notice %></p>
+
+<h1>Internal Positions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Is real</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @internal_positions.each do |internal_position| %>
+      <tr>
+        <td><%= internal_position.name %></td>
+        <td><%= internal_position.description %></td>
+        <td><%= internal_position.is_real %></td>
+        <td><%= link_to 'Show', internal_position %></td>
+        <td><%= link_to 'Edit', edit_internal_position_path(internal_position) %></td>
+        <td><%= link_to 'Destroy', internal_position, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Internal Position', new_internal_position_path %>

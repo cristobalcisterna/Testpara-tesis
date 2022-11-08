@@ -1,0 +1,72 @@
+<%= form_with(model: condition_good, local: true) do |form| %>
+  <% if condition_good.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(condition_good.errors.count, "error") %> prohibited this condition_good from being saved:</h2>
+
+      <ul>
+        <% condition_good.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :lost_date %>
+    <%= form.date_select :lost_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :loss_detail %>
+    <%= form.text_area :loss_detail %>
+  </div>
+
+  <div class="field">
+    <%= form.label :destruction_date %>
+    <%= form.date_select :destruction_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :destruction_detail %>
+    <%= form.text_area :destruction_detail %>
+  </div>
+
+  <div class="field">
+    <%= form.label :repairable %>
+    <%= form.number_field :repairable %>
+  </div>
+
+  <div class="field">
+    <%= form.label :request_date %>
+    <%= form.date_select :request_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :request_status %>
+    <%= form.number_field :request_status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :income_reason %>
+    <%= form.text_area :income_reason %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date_entry %>
+    <%= form.date_select :date_entry %>
+  </div>
+
+  <div class="field">
+    <%= form.label :good_id %>
+    <%= form.text_field :good_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :condition_id %>
+    <%= form.text_field :condition_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name_building: MyString
+  identification_number_building: MyString
+  location_building: MyString
+  duty_manager: one
+  unit: one
+
+two:
+  name_building: MyString
+  identification_number_building: MyString
+  location_building: MyString
+  duty_manager: two
+  unit: two

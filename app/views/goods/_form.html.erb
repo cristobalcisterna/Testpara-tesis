@@ -1,0 +1,77 @@
+<%= form_with(model: good, local: true) do |form| %>
+  <% if good.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(good.errors.count, "error") %> prohibited this good from being saved:</h2>
+
+      <ul>
+        <% good.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :good_description %>
+    <%= form.text_area :good_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :identification_number_usach %>
+    <%= form.text_field :identification_number_usach %>
+  </div>
+
+  <div class="field">
+    <%= form.label :identification_number_good %>
+    <%= form.text_field :identification_number_good %>
+  </div>
+
+  <div class="field">
+    <%= form.label :serie_number %>
+    <%= form.text_field :serie_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :internal_number %>
+    <%= form.text_field :internal_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :trademark %>
+    <%= form.text_field :trademark %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date_purchase %>
+    <%= form.date_select :date_purchase %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date_release %>
+    <%= form.date_select :date_release %>
+  </div>
+
+  <div class="field">
+    <%= form.label :location_good %>
+    <%= form.text_field :location_good %>
+  </div>
+
+  <div class="field">
+    <%= form.label :duty_manager_id %>
+    <%= form.text_field :duty_manager_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :office_id %>
+    <%= form.text_field :office_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :activegood %>
+    <%= form.text_field :activegood %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

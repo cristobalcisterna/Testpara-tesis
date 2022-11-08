@@ -1,0 +1,2 @@
+class InvestmentType < ApplicationRecord
+end

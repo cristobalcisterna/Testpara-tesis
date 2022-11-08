@@ -1,0 +1,62 @@
+<%= form_with(model: office, local: true) do |form| %>
+  <% if office.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(office.errors.count, "error") %> prohibited this office from being saved:</h2>
+
+      <ul>
+        <% office.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name_office %>
+    <%= form.text_field :name_office %>
+  </div>
+
+  <div class="field">
+    <%= form.label :identification_number_office %>
+    <%= form.text_field :identification_number_office %>
+  </div>
+
+  <div class="field">
+    <%= form.label :location %>
+    <%= form.text_field :location %>
+  </div>
+
+  <div class="field">
+    <%= form.label :office_description %>
+    <%= form.text_area :office_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hours_available %>
+    <%= form.number_field :hours_available %>
+  </div>
+
+  <div class="field">
+    <%= form.label :square_meter %>
+    <%= form.number_field :square_meter %>
+  </div>
+
+  <div class="field">
+    <%= form.label :campus_identification %>
+    <%= form.text_field :campus_identification %>
+  </div>
+
+  <div class="field">
+    <%= form.label :duty_manager_id %>
+    <%= form.text_field :duty_manager_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :building_id %>
+    <%= form.text_field :building_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

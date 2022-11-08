@@ -1,0 +1,2 @@
+class FinancialSource < ApplicationRecord
+end

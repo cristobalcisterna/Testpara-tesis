@@ -1,0 +1,99 @@
+<nav class="navbar navbar-light" style="background-color: #317cd1;">
+  <div class="container">
+    <div class="navbar-brand">
+      <% if user_signed_in?%>
+        <page-sidebar class="navbar-item" user-id=<%= current_user.id %>
+
+                      v-bind:cargos-activos="<%= current_user.internal_positions.to_json %>"
+                      v-bind:cargo-activo="<%= current_user.cargo_principal.id.to_json %>"
+        ></page-sidebar>
+
+
+      <% end %>
+      <a class="navbar-item" href="/">
+        <img src="/logo_usach.png">
+      </a>
+      <a class="navbar-item" href="/" style="font-weight:bold; color:#FFFFFF; ">
+        GESTION  DE INVENTARIO
+      </a>
+
+      <span class="navbar-burger burger" data-target="navMenu">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </span>
+    </div>
+
+    <div id="navMenu" class="navbar-menu">
+      <div class="navbar-end">
+        <%if user_signed_in?%>
+
+        <a href="/" class="navbar-item is-active" style="color: white;" >Inicio</a>
+
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              <%if current_user.avatar_url.blank? %>
+                <figure class="image" style="width: 50px;
+                  height: 50px;
+                  max-width: 50px;
+                  max-height: 50px;">
+                  <img class="is-rounded" src="/blank_profile_photo.png">
+                </figure>
+              <%else %>
+                <figure class="image" style="width: 50px;
+                  height: 50px;
+                  max-width: 50px;
+                  max-height: 50px;">
+                  <img class="is-rounded" src="<%= current_user.avatar_url%>">
+                </figure>
+              <%end %>
+
+            </a>
+            <div class="navbar-dropdown">
+              <a class="navbar-item" href="/">
+                  <span class="icon">
+                    <i class="fas fa-home" aria-hidden="true"></i>
+                  </span>
+                <span>Inicio</span>
+              </a>
+
+              <hr class="navbar-divider">
+                <%=link_to "Cerrar sesión",users_sign_out_path, {method: :delete , :class=> 'navbar-item'}%>
+            </div>
+          </div>
+        <% else %>
+          <%=link_to "Iniciar sesión", user_google_oauth2_omniauth_authorize_path,
+                     :class => 'navbar-item', method: :post%>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+</nav>
+<script type="application/javascript">
+    document.addEventListener('DOMContentLoaded', () => {
+
+        // Get all "navbar-burger" elements
+        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+        // Check if there are any navbar burgers
+        if ($navbarBurgers.length > 0) {
+
+            // Add a click event on each of them
+            $navbarBurgers.forEach( el => {
+                el.addEventListener('click', () => {
+
+                    // Get the target from the "data-target" attribute
+                    const target = el.dataset.target;
+                    const $target = document.getElementById(target);
+
+                    // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+                    el.classList.toggle('is-active');
+                    $target.classList.toggle('is-active');
+
+                });
+            });
+        }
+
+    });
+</script>

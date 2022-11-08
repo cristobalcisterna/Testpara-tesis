@@ -1,0 +1,27 @@
+<%= form_with(model: financial_source, local: true) do |form| %>
+  <% if financial_source.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(financial_source.errors.count, "error") %> prohibited this financial_source from being saved:</h2>
+
+      <ul>
+        <% financial_source.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name_financial_source %>
+    <%= form.text_field :name_financial_source %>
+  </div>
+
+  <div class="field">
+    <%= form.label :detail %>
+    <%= form.text_area :detail %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

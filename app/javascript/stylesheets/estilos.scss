@@ -1,0 +1,240 @@
+
+.is-big-size{
+  font-size:7rem;
+}
+
+
+h1 {
+color: #000000;
+font-weight: normal;
+font-size: 40px;
+font-family: Arial;
+text-transform: uppercase;
+margin: 10px;
+}
+.b-table{
+.pagination-list {
+  a{
+    &.is-current{
+      border-color: #2459c4;
+      background-color: #2459c4;
+
+    }
+  }
+  
+
+}
+}
+.b-tabs {
+.tabs {
+    margin-bottom: 0;
+    flex-shrink: 0;
+    &.is-boxed {
+      li {
+          a:focus {
+              color: #2459c4;
+          }
+          &:not(.is-active) {
+              a:focus {
+                  color: #000000;
+              }
+          }
+          &.is-active {
+            a {
+              color: #2459c4;
+            }
+        }
+      }
+  }
+  }}
+
+
+a:link {
+color: #2459c4;
+}
+
+/* visited link */
+a:visited {
+color: #000000;
+}
+
+/* mouse over link */
+a:hover {
+color: #2459c4;
+}
+
+/* selected link */
+a:active {
+color: #2459c4;
+}
+
+.icon {
+font-size: 14px;
+}
+.href{
+color: #000000;
+}
+
+.center {
+text-align: center;
+}
+
+
+
+
+
+ul.b {
+list-style-type: square;
+}
+.tabs.is-large {
+font-size: 1.5rem;
+}
+
+ul.is-large{
+font-size:0.65em;
+}
+
+.titulo-panel{
+font-size: 1rem
+}
+.subtitulo-panel{
+font-size: .9em
+}
+.tab-pane {
+display: none;
+}
+.panel-block{
+background-color: white;
+}
+
+.navbar-item img {
+max-height: 3rem;
+}
+
+.is-50{
+width:50%;
+}
+
+.search-bar{
+background-color: #3298dc;
+}
+.search-bar {
+align-items: center;
+color: #363636;
+display: flex;
+justify-content: flex-start;
+padding: 0.5em 0.75em;
+}
+.is-table-label{
+font-weight: bold;
+}
+.add-padding-20{
+padding:20px;
+}
+.add-padding-10{
+padding:10px;
+}
+.add-margin-20{
+margin-right:20px;
+margin-top:5px;
+}
+.is-excel-color{
+background-color:#1f6e43;
+color: white;
+}
+.is-excel-color:hover{
+color: white;
+}
+.is-pdf-color{
+background-color:#ad0b00;
+color: white;
+}
+.validation-alert{
+color: #f14668;
+font-size: 0.75rem;
+margin-top: 0.25rem;
+}
+
+.multiselect__option--highlight {
+background: #2459c4 !important;
+}
+.multiselect__option--highlight:after {
+background: #2459c4 !important;
+} 
+.multiselect__tag-icon:focus:after,
+.multiselect__tag-icon:hover:after {
+color: #2459c4 !important;
+}
+
+.is-big-size{
+font-size:7rem;
+}
+
+
+.pagination {
+font-size: 35px;
+color: black;
+}
+
+.pagination a {
+font-size: 22px;
+}
+
+.pagination a.active {
+background-color: #4CAF50;
+color: white;
+}
+
+.pagination a:hover:not(.active) {
+background-color: #ddd;
+
+}
+/*
+.b-sidebar .sidebar-content{
+  width:300px;
+  box-shadow: 5px 0px 13px 3px rgba(10, 10, 10, 0.1);
+  z-index: 41;
+}
+*/
+.b-sidebar .sidebar-content{
+width: 300px;
+}
+
+/* ESTILOS PARA QUE EL DATEPICKER NO SE SALGA DEL MODAL   */
+
+#modal-event .modal .animation-content .modal-card {
+overflow: visible !important;
+}
+#modal-event {
+overflow: visible !important;
+}
+#tabla-participantes .b-table .table{
+border: 5px solid !important;
+outline: 5px solid!important;
+margin: 1px;
+}
+#rounded hr.rounded {
+
+border-top: 20px solid #bbb;
+border-radius: 25px #bbb;
+}
+
+#sidebar-footer {
+position: static;
+width: 100%;
+clear: both;
+bottom: 0;
+padding: 0;
+margin-bottom: 0;
+margin-top: auto;
+/* ATTENTION! The following elements below
+can be set to whatever your heart desires */
+height: 80px; /* REMEMBER height = padding-bottom */
+}
+#sidebar-menu {
+margin: 0;
+padding: 0;
+height: 100%;
+overflow: scroll;
+}
+

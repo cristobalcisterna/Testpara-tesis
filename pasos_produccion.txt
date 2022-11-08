@@ -1,0 +1,42 @@
+En application_controller.rb añadir la siguiente línea previo a before_action:authenticate_user!
+
+protect_from_forgery prepend: true
+````````````````````````````````````````````````````
+
+en javascripts/packs/application.js eliminar las líneas (en la carpeta images no deberían haber archivos):
+
+const images = require.context('../images', true)
+const imagePath = (name) => images(name,true)
+````````````````````````````````````````````````````
+
+en config/application.rb añadir las siguientes líneas:
+
+config.i18n.default_locale = :es
+config.autoloader = :classic
+config.exceptions_app = self.routes # a Rack Application
+config.session_store :cookie_store, key: '_interslice_session'
+config.middleware.use ActionDispatch::Cookies
+config.middleware.use ActionDispatch::Session::CookieStore, config.session_options
+config.assets.paths << Rails.root.join('node_modules')
+````````````````````````````````````````````````````
+
+en production.rb añadir las siguientes líneas:
+
+Rails.application.config.session_store :cookie_store, key: '__Secure-session', same_site: :strict
+config.secret_key_base = ENV["SECRET_KEY_BASE"]
+config.action_dispatch.default_headers = {
+    'Referrer-Policy' => 'same-origin',
+    'X-Content-Type-Options' => 'nosniff',
+    'X-Frame-Options' => 'SAMEORIGIN',
+    'X-XSS-Protection' => '1; mode=block',
+    'Feature-Policy' => "accelerometer 'none'; ambient-light-sensor 'none'; autoplay 'none'; camera 'none'; encrypted-media 'none'; fullscreen 'self'; geolocation 'none'; gyroscope 'none'; magnetometer 'none'; microphone 'none'; midi 'none'; payment 'none'; picture-in-picture 'none'; speaker 'self'; sync-xhr 'none'; usb 'none'; vr 'none'"
+  }
+config.public_file_server.enabled = true
+````````````````````````````````````````````````````
+
+en webpacker.yml en el ambiente de producción cambiar:
+
+extract_css:false
+
+
+

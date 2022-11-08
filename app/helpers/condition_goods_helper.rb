@@ -1,0 +1,2 @@
+module ConditionGoodsHelper
+end

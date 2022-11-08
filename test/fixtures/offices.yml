@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name_office: MyString
+  identification_number_office: MyString
+  location: MyString
+  office_description: MyText
+  hours_available: 1
+  square_meter: 1
+  campus_identification: MyString
+  duty_manager: one
+  building: one
+
+two:
+  name_office: MyString
+  identification_number_office: MyString
+  location: MyString
+  office_description: MyText
+  hours_available: 1
+  square_meter: 1
+  campus_identification: MyString
+  duty_manager: two
+  building: two

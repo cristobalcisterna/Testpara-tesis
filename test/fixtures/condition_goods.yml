@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  lost_date: 2022-07-11
+  loss_detail: MyText
+  destruction_date: 2022-07-11
+  destruction_detail: MyText
+  repairable: 1
+  request_date: 2022-07-11
+  request_status: 1
+  income_reason: MyText
+  date_entry: 2022-07-11
+  goods: one
+  condition: one
+
+two:
+  lost_date: 2022-07-11
+  loss_detail: MyText
+  destruction_date: 2022-07-11
+  destruction_detail: MyText
+  repairable: 1
+  request_date: 2022-07-11
+  request_status: 1
+  income_reason: MyText
+  date_entry: 2022-07-11
+  goods: two
+  condition: two

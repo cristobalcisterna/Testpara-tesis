@@ -1,0 +1,35 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  namegood: MyString
+  good_description: MyText
+  identification_number_usach: MyString
+  identification_number_good: MyString
+  serie_number: MyString
+  internal_number: MyString
+  trademark: MyString
+  date_purchase: 2022-07-11
+  date_release: 2022-07-11
+  location_good: MyString
+  amount: 1
+  financial_source: MyString
+  investment_type: MyString
+  duty_manager: one
+  office: one
+
+two:
+  namegood: MyString
+  good_description: MyText
+  identification_number_usach: MyString
+  identification_number_good: MyString
+  serie_number: MyString
+  internal_number: MyString
+  trademark: MyString
+  date_purchase: 2022-07-11
+  date_release: 2022-07-11
+  location_good: MyString
+  amount: 1
+  financial_source: MyString
+  investment_type: MyString
+  duty_manager: two
+  office: two

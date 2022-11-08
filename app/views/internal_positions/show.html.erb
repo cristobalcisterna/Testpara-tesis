@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @internal_position.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @internal_position.description %>
+</p>
+
+<p>
+  <strong>Is real:</strong>
+  <%= @internal_position.is_real %>
+</p>
+
+<%= link_to 'Edit', edit_internal_position_path(@internal_position) %> |
+<%= link_to 'Back', internal_positions_path %>
