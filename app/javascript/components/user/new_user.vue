@@ -135,13 +135,15 @@
         console.log(this.aux_email);
         console.log(this.aux_rut);
         console.log(this.aux_rol);
-        const response = await axios.post("/users.json", {
+        const response = await axios.post("/users/newuser.json", {
             full_name: this.aux_full_name,
             rut: this.aux_rut,
             email: this.aux_email,
+            internal_position_id: this.aux_rol,
+
        
         });
-        window.location.href = "/users";
+        
       },
 
       async getcargos() {

@@ -31,7 +31,8 @@
                 </template>
               </multiselect>
               <div v-if= "cargoActivoSeleccionado">
-              <b-menu-item    href="/" icon="home" label="Inicio"></b-menu-item>
+                <b-menu-item    href="/" icon="home" label="Inicio"></b-menu-item>
+                <b-menu-item  v-show='!(cargoActivoSeleccionado == 3)' href="/users"  label="Usuarios" icon="cube"></b-menu-item>
                 <b-menu-item  v-show='!(cargoActivoSeleccionado == 3)' href="/goods"  label="Bienes" icon="cube"></b-menu-item>
                 <b-menu-item  v-show='!(cargoActivoSeleccionado == 3)' href="/duty_managers"  label="Personas asociadas" icon="id-card"></b-menu-item>
                 <b-menu-item  v-show='!(cargoActivoSeleccionado == 3)' href="/offices"  label="Dependencias" icon="people-roof"></b-menu-item>

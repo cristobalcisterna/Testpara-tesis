@@ -29,6 +29,7 @@ Para crear un usuario de manera local, utilizar la siguiente función
 - User.asignar_cargo("cristobal.cisterna@usach.cl","SUPERADMIN")
 - User.asignar_cargo("cristobal.cisterna@usach.cl","VISITANTE")
 - User.asignar_cargo("cristobal.cisterna@usach.cl","UNIDADENCARGADO")
+- User.asignar_cargo("emailprueba@gmail.cl","12345678-9","Nombre Prueba","USUARIONORMAL")
 
 - User.asignar_cargo("tucorreo@usach.cl","VISITANTE") 
 

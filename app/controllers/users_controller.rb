@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-before_action :set_user, only: %i[ show edit update destroy ]
+before_action :set_user,  only: %i[ show edit update destroy ]
 
 # GET /users or /users.json
 def index
@@ -60,14 +60,15 @@ end
 
 
 def asignar_cargo
+  nombre_cargo=InternalPosition.find(params[:internal_position_id]).name
   respond_to do |format|
     format.json {
-      @user= User.asignar_cargo(params[:data])
-      if !@user.nil?
-        if @user.valid?
-          render json: @user 
+      usuario= User.asignar_cargo(params[:email],params[:rut],params[:full_name],nombre_cargo)
+      if !usuario.nil?
+        if !usuario.id.blank?
+          
         else
-          render json: { error: @user.errors.to_hash(true) }, status: :unprocessable_entity 
+          render json: { error: usuario.errors.to_hash(true) }, status: :unprocessable_entity 
         end
       else
         error = { :mensaje => ["El usuario ya existe en la plataforma"] }
@@ -81,6 +82,7 @@ private
   # Use callbacks to share common setup or constraints between actions.
   def set_user
     @user = User.find(params[:id])
+
   end
 
   # Only allow a list of trusted parameters through.

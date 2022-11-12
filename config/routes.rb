@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   resources :conditions
   resources :finances
   resources :users do
-    collection{get '/newuser' => 'users#asignar_cargo'}
+    collection{post '/newuser' => 'users#asignar_cargo'}
   end
   resources :internal_positions
 
